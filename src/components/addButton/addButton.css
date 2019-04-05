@@ -1,0 +1,9 @@
+.add-button {
+  display: flex;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 3em;
+  justify-content: center;
+  background-color: blue;
+  color: aliceblue;
+}

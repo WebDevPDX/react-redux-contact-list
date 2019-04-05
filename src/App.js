@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import ContactsList from './containers/contactsList'
+import { ContactsList } from './components/contactsList/ContactsList'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <ContactsList />
+      <div className='app-wrapper'>
+        <ContactsList />
+      </div>
     )
   }
 }

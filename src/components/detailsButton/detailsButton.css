@@ -1,0 +1,7 @@
+.details-button {
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+  color: aliceblue;
+  margin-right: 5px;
+}
