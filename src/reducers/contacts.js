@@ -1,13 +1,15 @@
+import { v4 } from 'node-uuid'
+
 const initialState = [
   {
-    _id: 1,
+    _id: v4(),
     firstName: 'Falk',
 		lastName: 'Schwiefert',  
 		email: 'falk.schwiefert@gmail.com',
 		country: 'ES',
   },
   {
-  _id: 2,
+  _id: v4(),
   firstName: 'Test',
 	lastName: 'TestTest', 
 	email: 'test@gmail.com',
@@ -22,11 +24,9 @@ const contacts = (state = initialState, action) => {
 		// 	return state 
 
 		case 'ADD_CONTACT':
-			const ids = state.map(contact => contact._id)
-			const maxId = Math.max(...ids)
 			console.log(action)
 			return state.concat([{
-				_id: maxId+1, 
+				_id: v4(), 
 				firstName: action.contact.firstName, 
 				lastName: action.contact.lastName, 
 				email: action.contact.email,
