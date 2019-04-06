@@ -7,6 +7,8 @@ const DetailContact = ({ contact }) => (
   <div>
     <div className='contact-line_last-name'>{contact.lastName}</div>
     <div className='contact-line_first-name'>{contact.firstName}</div>
+    <div className='contact-line_email'>{contact.firstName}</div>
+    <div className='contact-line_country'>{contact.firstName}</div>
   </div>
 )
 

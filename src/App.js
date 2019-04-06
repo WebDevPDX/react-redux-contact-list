@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from "react-router-dom"
 import { ContactsList } from './components/contactsList/ContactsList'
 import DetailContact from './containers/detailContact/DetailContact'
-import AddContactForm from './components/addContactForm/addContactForm'
+import AddContactForm from './components/addContactForm/AddContactForm'
 import { UserForm } from './components/userForm/UserForm'
 import './App.css';
 
