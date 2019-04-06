@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import countryList from 'country-list'
 
-const DetailContact = ({ contact }) => (
+const DetailContact = ({ contact }) => console.log(contact) || (
   <div>
     <div className='contact-line_last-name'>{contact.lastName}</div>
     <div className='contact-line_first-name'>{contact.firstName}</div>
@@ -16,7 +16,7 @@ const DetailContact = ({ contact }) => (
 function mapStateToProps(state, props) {
 	return {
 		contact: state.contacts.find(contact => {
-      return contact._id === parseInt(props.match.params.id)})
+      return contact._id === props.match.params.id})
 	}
 }
 function mapDispatchToProps(dispatch) {
