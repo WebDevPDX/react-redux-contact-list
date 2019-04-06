@@ -1,15 +1,15 @@
 const initialState = [
   {
     _id: 1,
-    firstname: 'Falk',
-		lastname: 'Schwiefert',  
+    firstName: 'Falk',
+		lastName: 'Schwiefert',  
 		email: 'falk.schwiefert@gmail.com',
 		country: 'Spain',
   },
   {
   _id: 2,
-  firstname: 'Test',
-	lastname: 'TestTest', 
+  firstName: 'Test',
+	lastName: 'TestTest', 
 	email: 'test@gmail.com',
 	country: 'test',
   },

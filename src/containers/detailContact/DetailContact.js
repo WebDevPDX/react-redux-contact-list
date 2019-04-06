@@ -1,22 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
-class DetailContact extends Component {
-  render() {
-    return (
-      <div>
-        {console.log('loaded', this.props)}
-        This is the detailsContact view
-      </div>
-    )
-  } 
-}
+const DetailContact = ({ contact }) => (
+  <div>
+    <div className='contact-line_last-name'>{contact.lastName}</div>
+    <div className='contact-line_first-name'>{contact.firstName}</div>
+  </div>
+)
 
-function mapStateToProps(state) {
+function mapStateToProps(state, props) {
 	return {
-		contacts: state.contacts
+		contact: state.contacts.find(contact => {
+      return contact._id === parseInt(props.match.params.id)})
 	}
 }
 function mapDispatchToProps(dispatch) {

@@ -17,8 +17,8 @@ class AllContacts extends Component {
   createContactLine(contact) {
     return(
       <div className='contact-line' key={contact._id}>
-        <div className='contact-line_last-name'>{contact.lastname}</div>
-        <div className='contact-line_first-name'>{contact.firstname}</div>
+        <div className='contact-line_last-name'>{contact.lastName}</div>
+        <div className='contact-line_first-name'>{contact.firstName}</div>
         <DetailsButton contact={contact}/>
         <DeleteButton deleteContact={() => this.deleteHandler(contact)}/>
       </div>
