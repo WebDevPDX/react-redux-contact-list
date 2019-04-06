@@ -4,14 +4,14 @@ const initialState = [
     firstName: 'Falk',
 		lastName: 'Schwiefert',  
 		email: 'falk.schwiefert@gmail.com',
-		country: 'Spain',
+		country: 'ES',
   },
   {
   _id: 2,
   firstName: 'Test',
 	lastName: 'TestTest', 
 	email: 'test@gmail.com',
-	country: 'test',
+	country: 'MX',
   },
 ]
 
@@ -21,13 +21,17 @@ const contacts = (state = initialState, action) => {
 		// case 'GET_CONTACTS':
 		// 	return state 
 
-		// case 'ADD_CONTACT':
-		// 	return state.concat([{
-		// 		_id: action.id, 
-		// 		name: action.name, 
-		// 		phone: action.phone, 
-		// 		email: action.email
-		// 	}])
+		case 'ADD_CONTACT':
+			const ids = state.map(contact => contact._id)
+			const maxId = Math.max(...ids)
+			console.log(action)
+			return state.concat([{
+				_id: maxId+1, 
+				firstName: action.contact.firstName, 
+				lastName: action.contact.lastName, 
+				email: action.contact.email,
+				country: action.contact.country,
+			}])
 
 		case 'DELETE_CONTACT':
 			return state.filter( contact => {

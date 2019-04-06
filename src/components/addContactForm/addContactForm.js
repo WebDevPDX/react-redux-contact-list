@@ -22,7 +22,6 @@ class addContactForm extends Component {
   }
 
   handleChange(event) {
-    console.log('test', event.target.name, event.target.value)
     this.setState({[event.target.name]: event.target.value});
   }
 
@@ -31,16 +30,8 @@ class addContactForm extends Component {
   }
 
   handleSubmit(event) {
-    if (!this.canBeSubmitted()) {
-      alert('A name was submitted: ' + this.state.value);
-    }
     event.preventDefault()
-  }
-
-  canBeSubmitted() {
-    const errors = this.validateInputs(this.state.firstName, this.state.lastName, this.state.email)
-    const isDisabled = Object.keys(errors).some(x => errors[x])
-    return !isDisabled
+    this.props.addContact(this.state)
   }
 
   createSelectItems() {
@@ -54,6 +45,7 @@ class addContactForm extends Component {
   }
 
   render() {
+    console.log(this.props)
     const errors = this.validateInputs(this.state.firstName, this.state.lastName, this.state.email)
     const isDisabled = Object.keys(errors).some(x => errors[x])
     return (
