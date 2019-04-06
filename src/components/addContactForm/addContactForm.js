@@ -32,10 +32,9 @@ class addContactForm extends Component {
 
   handleSubmit(event) {
     if (!this.canBeSubmitted()) {
-      const { firstName, lastName, email } = this.state
-      console.log(`Submitted: ${firstName}, ${lastName}, ${email}`)
-      event.preventDefault()
+      alert('A name was submitted: ' + this.state.value);
     }
+    event.preventDefault()
   }
 
   canBeSubmitted() {
@@ -61,19 +60,35 @@ class addContactForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           First Name:
-          <input type="text" name='firstName' value={this.state.firstName} onChange={this.handleChange} required/>
+          <input 
+            className={errors.firstName ? "error" : ""} 
+            type="text" 
+            name='firstName' 
+            value={this.state.firstName} 
+            onChange={this.handleChange}
+          />
         </label>
         <label>
           Last Name:
-          <input type="text" name='lastName' value={this.state.lastName} onChange={this.handleChange} required/>
+          <input 
+            className={errors.lastName ? "error" : ""} 
+            type="text" name='lastName' 
+            value={this.state.lastName} 
+            onChange={this.handleChange} 
+          />
         </label>
         <label>
           Email:
-          <input type="email" name='email' value={this.state.email} onChange={this.handleChange} required/>
+          <input
+            className={errors.email ? "error" : ""} 
+            type="email" name='email' 
+            value={this.state.email} 
+            onChange={this.handleChange}
+          />
         </label>
         <label>
           Country:
-          <select onChange={this.onDropdownSelected} label="Multiple Select" multiple>
+          <select onChange={this.onDropdownSelected}>
             {this.createSelectItems()}
           </select>
         </label>

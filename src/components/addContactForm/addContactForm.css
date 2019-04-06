@@ -9,7 +9,7 @@ form input {
   padding: 5px 10px;
   margin: 10px 0;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 2px solid green;
 }
 
 form input.error {
@@ -23,10 +23,10 @@ form select {
   padding: 5px 10px;
   margin: 10px 0;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 2px solid green;
 }
 
-select option {
+select {
   text-transform: capitalize;
 }
 
@@ -48,6 +48,6 @@ select option {
 }
 
 .submit-button:disabled {
-  background-color: #dbf99f;
+  background-color: darkgray;
   color: #333;
 }
