@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { DetailsButton } from'../components/detailsButton/DetailsButton'
-import { DeleteButton } from '../components/deleteButton/DeleteButton'
-import { deleteThisContact } from '../actions/deleteThisContact'
+import { withRouter } from 'react-router-dom'
+import { DetailsButton } from'../../components/detailsButton/DetailsButton'
+import { DeleteButton } from '../../components/deleteButton/DeleteButton'
+import { deleteThisContact } from '../../actions/deleteThisContact'
 import './allContacts.css'
 
 class AllContacts extends Component {
@@ -18,7 +19,7 @@ class AllContacts extends Component {
       <div className='contact-line' key={contact._id}>
         <div className='contact-line_last-name'>{contact.lastname}</div>
         <div className='contact-line_first-name'>{contact.firstname}</div>
-        <DetailsButton showDetails={() => this.detailsHandler(contact)}/>
+        <DetailsButton contact={contact}/>
         <DeleteButton deleteContact={() => this.deleteHandler(contact)}/>
       </div>
     )
@@ -43,4 +44,4 @@ function mapDispatchToProps(dispatch) {
 	}, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllContacts)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(AllContacts))

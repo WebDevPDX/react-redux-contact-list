@@ -1,7 +1,9 @@
-.details-button {
+.details-link {
   display: flex;
   justify-content: center;
   background-color: blue;
   color: aliceblue;
   margin-right: 5px;
+  text-decoration: none;
+  border: solid 2px, rgb(221,221,221)
 }
