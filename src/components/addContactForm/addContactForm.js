@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import countryList from 'country-list'
 import validator from 'email-validator'
 import './addContactForm.css'
@@ -6,7 +7,12 @@ import './addContactForm.css'
 class addContactForm extends Component {
   constructor(props) {
     super(props)
-    this.state = {firstName: '', lastName: '', email: '', country: ''}
+    this.state = {
+      firstName: '', 
+      lastName: '', 
+      email: '', 
+      country: ''
+    }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,6 +38,7 @@ class addContactForm extends Component {
   handleSubmit(event) {
     event.preventDefault()
     this.props.addContact(this.state)
+    return <Redirect to='/' />
   }
 
   createSelectItems() {
@@ -45,7 +52,6 @@ class addContactForm extends Component {
   }
 
   render() {
-    console.log(this.props)
     const errors = this.validateInputs(this.state.firstName, this.state.lastName, this.state.email)
     const isDisabled = Object.keys(errors).some(x => errors[x])
     return (

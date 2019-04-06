@@ -24,7 +24,6 @@ const contacts = (state = initialState, action) => {
 		// 	return state 
 
 		case 'ADD_CONTACT':
-			console.log(action)
 			return state.concat([{
 				_id: v4(), 
 				firstName: action.contact.firstName, 

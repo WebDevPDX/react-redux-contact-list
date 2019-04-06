@@ -8,9 +8,7 @@ import { deleteThisContact } from '../../actions/deleteThisContact'
 import './allContacts.css'
 
 class AllContacts extends Component {
-  detailsHandler(contact) {
-    console.log(contact)
-  }
+
   deleteHandler(contact) {
     this.props.deleteThisContact(contact)
   }

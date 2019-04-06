@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import countryList from 'country-list'
 
-const DetailContact = ({ contact }) => console.log(contact) || (
+const DetailContact = ({ contact }) => (
   <div>
     <div className='contact-line_last-name'>{contact.lastName}</div>
     <div className='contact-line_first-name'>{contact.firstName}</div>
