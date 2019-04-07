@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { loadState, saveState } from './localStorage'
 import reducer from '../reducers'
 
-const storedState = loadState();
+const storedState = loadState()
 
 export const store = createStore(reducer, storedState, composeWithDevTools())
 
