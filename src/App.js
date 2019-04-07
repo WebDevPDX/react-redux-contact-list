@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import { ContactsList } from './components/contactsList/ContactsList'
+import AllContactsContainer from './containers/allContacts/AllContactsContainer'
 import DetailContact from './containers/detailContact/DetailContact'
 import AddContactFormContainer from './containers/addContactForm/AddContactFormContainer'
 import { UserForm } from './components/userForm/UserForm'
@@ -12,11 +12,11 @@ class App extends Component {
       <div className='app-wrapper'>
         <Router>
           <Switch>
-            <Route path="/" exact component={ContactsList} /> 
+            <Route path="/" exact component={AllContactsContainer} /> 
             <Route path="/user/:id" component={DetailContact} />
             <Route path="/edit/:id" component={UserForm} />
             <Route path="/add" component={AddContactFormContainer} />
-            <Route component={ContactsList} />
+            <Route component={AllContactsContainer} />
           </Switch>
         </Router>
       </div>
