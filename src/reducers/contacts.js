@@ -18,10 +18,8 @@ const initialState = [
 ]
 
 const contacts = (state = initialState, action) => {
-	console.log(action.type, action.payload)
+	console.log(action.type, action.contact)
 	switch (action.type) {
-		// case 'GET_CONTACTS':
-		// 	return state 
 
 		case 'ADD_CONTACT':
 			return state.concat([{
@@ -34,16 +32,22 @@ const contacts = (state = initialState, action) => {
 
 		case 'DELETE_CONTACT':
 			return state.filter( contact => {
-				return (contact._id !== action.payload._id)
+				return (contact._id !== action.contact._id)
 			})
 
-		// case 'UPDATE_CONTACT':
-		// 	return state.map( contact => {
-		// 		if (contact._id === action.id) {
-		// 			return {_id: action.id, name: action.name, phone: action.phone, email: action.email}
-		// 		}
-		// 		return contact
-		// 	})
+		case 'EDIT_CONTACT':
+			return state.map( contact => {
+				if (contact._id === action.contact._id) {
+					return ({
+						_id: action.contact._id,
+						firstName: action.contact.firstName, 
+						lastName: action.contact.lastName, 
+						email: action.contact.email,
+						country: action.contact.country,
+				})} else {
+					return contact
+				}
+			})
 		
 		default:
 			return state		

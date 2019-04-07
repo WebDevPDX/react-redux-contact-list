@@ -1,0 +1,10 @@
+.add-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 3em;
+  background-color: blue;
+  color: aliceblue;
+  text-decoration: none;
+}
