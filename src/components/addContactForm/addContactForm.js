@@ -11,7 +11,8 @@ class addContactForm extends Component {
       firstName: '', 
       lastName: '', 
       email: '', 
-      country: ''
+      country: '',
+      redirect: false,
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -38,7 +39,7 @@ class addContactForm extends Component {
   handleSubmit(event) {
     event.preventDefault()
     this.props.addContact(this.state)
-    return <Redirect to='/' />
+    this.setState({redirect: true})
   }
 
   createSelectItems() {
@@ -54,8 +55,11 @@ class addContactForm extends Component {
   render() {
     const errors = this.validateInputs(this.state.firstName, this.state.lastName, this.state.email)
     const isDisabled = Object.keys(errors).some(x => errors[x])
+    if (this.state.redirect === true) {
+      return <Redirect to='/' />
+    }
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} >
         <label>
           First Name:
           <input 
@@ -92,7 +96,7 @@ class addContactForm extends Component {
         </label>
         <input className='submit-button' disabled={isDisabled} type="submit" value="Submit" />
       </form>
-    );
+    )
   }
 }
 
