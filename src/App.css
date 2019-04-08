@@ -3,6 +3,5 @@
   margin: 0;
   padding: 10px;
   height: 100vh;
-  justify-content: center;
-  background-color: midnightblue;
+  max-width: 640px;
 }

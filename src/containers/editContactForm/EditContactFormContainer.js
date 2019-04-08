@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { editContact } from '../../actions/editContact'
-import EditContactForm from '../../components/editContactForm/EditContactForm'
+import ContactForm from '../../components/contactForm/ContactForm'
 
 function mapStateToProps(state, props) {
 	return {
@@ -16,6 +16,6 @@ function mapDispatchToProps(dispatch) {
 	}, dispatch)
 }
 
-const EditContactFormContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(EditContactForm))
+const EditContactFormContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(ContactForm))
 
 export default EditContactFormContainer;

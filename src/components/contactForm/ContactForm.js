@@ -2,16 +2,19 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import countryList from 'country-list'
 import validator from 'email-validator'
-import './addContactForm.css'
+import './contactForm.css'
 
 class addContactForm extends Component {
   constructor(props) {
     super(props)
+    const isEdit = props.match.path === '/user/edit/:id'
     this.state = {
-      firstName: '', 
-      lastName: '', 
-      email: '', 
-      country: '',
+      _id: isEdit ? props.contact._id : '',
+      firstName: isEdit ? props.contact.firstName : '',
+      lastName: isEdit ? props.contact.lastName: '',
+      email: isEdit ? props.contact.email: '',
+      country: isEdit ? props.contact.country: '',
+      isEdit: isEdit,
       redirect: false,
     }
 
@@ -38,18 +41,17 @@ class addContactForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    this.props.addContact(this.state)
+    this.state.isEdit ? this.props.editThisContact(this.state) : this.props.addContact(this.state)
     this.setState({redirect: true})
   }
 
   createSelectItems() {
     const countryNameList = countryList.getNameList()
     let selectItems = []
-    for (let key in countryNameList) {             
+    for (let key in countryNameList) {          
       selectItems.push(<option key={countryNameList[key]} value={countryNameList[key]}>{key}</option>);   
     }
     return selectItems;
-
   }
 
   render() {
@@ -60,29 +62,26 @@ class addContactForm extends Component {
     }
     return (
       <form onSubmit={this.handleSubmit} >
-        <label>
+        <label className={errors.firstName ? "error" : ""}>
           First Name:
           <input 
-            className={errors.firstName ? "error" : ""} 
             type="text" 
             name='firstName' 
             value={this.state.firstName} 
             onChange={this.handleChange}
           />
         </label>
-        <label>
+        <label className={errors.lastName ? "error" : ""}>
           Last Name:
           <input 
-            className={errors.lastName ? "error" : ""} 
             type="text" name='lastName' 
             value={this.state.lastName} 
             onChange={this.handleChange} 
           />
         </label>
-        <label>
+        <label className={errors.email ? "error" : ""}>
           Email:
           <input
-            className={errors.email ? "error" : ""} 
             type="email" name='email' 
             value={this.state.email} 
             onChange={this.handleChange}
@@ -90,11 +89,16 @@ class addContactForm extends Component {
         </label>
         <label>
           Country:
-          <select onChange={this.onDropdownSelected}>
+          <select onChange={this.onDropdownSelected} value={this.state.country}>
             {this.createSelectItems()}
           </select>
         </label>
-        <input className='submit-button' disabled={isDisabled} type="submit" value="Submit" />
+        <input 
+          className='submit-button' 
+          disabled={isDisabled} 
+          type="submit" 
+          value="Submit" 
+        />
       </form>
     )
   }
