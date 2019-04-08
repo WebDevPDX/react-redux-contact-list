@@ -1,13 +1,22 @@
 form {
-  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 0 50px;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  width: 100%;
+  color: white;
 }
 
 form input {
-  display: block;
-  width: 100%;
-  font-size: 20px;
-  padding: 5px 10px;
-  margin: 10px 0;
+  display: flex;
+  font-size: 1.4em;
+  width: 280px;
   border-radius: 5px;
   border: 2px solid green;
 }
@@ -17,11 +26,9 @@ form input.error {
 }
 
 form select {
-  display: block;
-  width: 100%;
-  font-size: 20px;
-  padding: 5px 10px;
-  margin: 10px 0;
+  display: flex;
+  font-size: 1.4em;
+  max-width: 304px;
   border-radius: 5px;
   border: 2px solid green;
 }
@@ -31,8 +38,10 @@ select {
 }
 
 .submit-button {
-  display: block;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 304px;
   appearance: none;
   border-radius: 5px;
   background-color: #84c00c;

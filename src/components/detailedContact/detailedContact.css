@@ -1,0 +1,14 @@
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.details-wrapper_line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  margin: 0 0 10px 0;
+  height: 3em;
+}

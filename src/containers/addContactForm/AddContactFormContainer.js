@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { addNewContact } from '../../actions/addNewContact'
-import AddContactForm from '../../components/addContactForm/AddContactForm'
+import ContactForm from '../../components/contactForm/ContactForm'
 
 function mapStateToProps(state) {
 	return {
@@ -15,6 +15,6 @@ function mapDispatchToProps(dispatch) {
 	}, dispatch)
 }
 
-const AddContactFormContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(AddContactForm))
+const AddContactFormContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(ContactForm))
 
 export default AddContactFormContainer;
