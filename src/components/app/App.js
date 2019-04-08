@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import AllContactsContainer from './containers/allContacts/AllContactsContainer'
-import DetailedContactContainer from './containers/detailedContact/DetailedContactContainer'
-import AddContactFormContainer from './containers/addContactForm/AddContactFormContainer'
-import EditContactFormContainer from './containers/editContactForm/EditContactFormContainer'
+import AllContactsContainer from '../../containers/allContacts/AllContactsContainer'
+import DetailedContactContainer from '../../containers/detailedContact/DetailedContactContainer'
+import AddContactFormContainer from '../../containers/addContactForm/AddContactFormContainer'
+import EditContactFormContainer from '../../containers/editContactForm/EditContactFormContainer'
 import './App.css'
 
 class App extends Component {
