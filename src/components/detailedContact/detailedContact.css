@@ -8,7 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
   margin: 0 0 10px 0;
   height: 3em;
+  border: 1px solid #F9CB40;
+  border-radius: 5px;
 }

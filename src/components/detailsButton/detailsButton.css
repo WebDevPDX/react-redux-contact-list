@@ -1,9 +1,10 @@
-.details-link {
+.details-button {
   display: flex;
-  justify-content: center;
-  background-color: blue;
-  color: aliceblue;
-  margin-right: 5px;
+  align-items: center;
+  padding: 0 10px;
+  height: 3em;
+  background-color: #F9CB40;
+  color: #0C0C0C;
   text-decoration: none;
-  border: solid 2px, rgb(221,221,221)
+  border-radius: 5px;
 }

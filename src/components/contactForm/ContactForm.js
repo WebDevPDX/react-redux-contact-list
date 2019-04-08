@@ -62,29 +62,26 @@ class addContactForm extends Component {
     }
     return (
       <form onSubmit={this.handleSubmit} >
-        <label>
+        <label className={errors.firstName ? "error" : ""}>
           First Name:
           <input 
-            className={errors.firstName ? "error" : ""} 
             type="text" 
             name='firstName' 
             value={this.state.firstName} 
             onChange={this.handleChange}
           />
         </label>
-        <label>
+        <label className={errors.lastName ? "error" : ""}>
           Last Name:
           <input 
-            className={errors.lastName ? "error" : ""} 
             type="text" name='lastName' 
             value={this.state.lastName} 
             onChange={this.handleChange} 
           />
         </label>
-        <label>
+        <label className={errors.email ? "error" : ""}>
           Email:
           <input
-            className={errors.email ? "error" : ""} 
             type="email" name='email' 
             value={this.state.email} 
             onChange={this.handleChange}
