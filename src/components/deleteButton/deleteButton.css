@@ -10,3 +10,7 @@
   border: none;
   border-radius: 5px;
 }
+
+.delete-button:hover {
+  background-color: #9E4C29;
+}
