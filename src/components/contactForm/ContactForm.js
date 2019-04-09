@@ -41,7 +41,7 @@ class addContactForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    this.state.isEdit ? this.props.editThisContact(this.state) : this.props.addContact(this.state)
+    this.state.isEdit ? this.props.editContact(this.state) : this.props.addContact(this.state)
     this.setState({redirect: true})
   }
 

@@ -7,7 +7,7 @@ import './contactsList.css'
 class ContactsList extends Component {
 
   deleteHandler(contact) {
-    this.props.deleteThisContact(contact)
+    this.props.deleteContact(contact)
   }
 
   createContactLine(contact) {

@@ -18,7 +18,6 @@ const initialState = [
 ]
 
 const contacts = (state = initialState, action) => {
-  console.log(action.type, action.contact)
   switch (action.type) {
     case 'ADD_CONTACT':
       return state.concat([

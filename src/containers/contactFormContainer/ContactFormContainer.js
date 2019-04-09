@@ -1,6 +1,7 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import { addContact } from '../../actions/addContact'
 import { editContact } from '../../actions/editContact'
 import ContactForm from '../../components/contactForm/ContactForm'
 
@@ -12,7 +13,8 @@ function mapStateToProps(state, props) {
 }
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-    editThisContact: editContact
+		addContact,
+    editContact,
 	}, dispatch)
 }
 

@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import ContactsList from '../../components/contactsList/ContactsList'
-import { deleteThisContact } from '../../actions/deleteThisContact'
+import { deleteContact } from '../../actions/deleteContact'
 
 function mapStateToProps(state) {
 	return {
@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-    deleteThisContact: deleteThisContact
+    deleteContact: deleteContact
 	}, dispatch)
 }
 
