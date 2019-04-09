@@ -1,19 +1,12 @@
-import { v4 } from 'node-uuid'
+import v4 from 'uuid/v4'
 
 const initialState = [
   {
     _id: v4(),
-    firstName: 'Falk',
-    lastName: 'Schwiefert',
-    email: 'falk.schwiefert@gmail.com',
-    country: 'ES',
-  },
-  {
-    _id: v4(),
-    firstName: 'Test',
-    lastName: 'TestTest',
-    email: 'test@gmail.com',
-    country: 'MX',
+    firstName: 'ExampleFN',
+    lastName: 'ExampleLN',
+    email: 'fn.ln@gmail.com',
+    country: 'US',
   },
 ]
 
