@@ -1,8 +1,8 @@
-import v4 from 'uuid/v4'
+import uuid from 'uuid'
 
 const initialState = [
   {
-    _id: v4(),
+    _id: 'testID123',
     firstName: 'ExampleFN',
     lastName: 'ExampleLN',
     email: 'fn.ln@gmail.com',
@@ -11,11 +11,14 @@ const initialState = [
 ]
 
 const contacts = (state = initialState, action) => {
+  if (!action || !action.type) {
+    return state
+  }
   switch (action.type) {
     case 'ADD_CONTACT':
       return state.concat([
         {
-          _id: v4(),
+          _id: uuid.v4(),
           firstName: action.contact.firstName,
           lastName: action.contact.lastName,
           email: action.contact.email,

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="contacts-list"
+>
+  <AddButton />
+  <div
+    className="contact-line"
+  >
+    <div
+      className="contact-line_last-name"
+    >
+      ExampleLN
+    </div>
+    <div
+      className="contact-line_first-name"
+    >
+      ExampleFN
+    </div>
+    <DetailsButton
+      contact={
+        Object {
+          "_id": "testID123",
+          "country": "US",
+          "email": "fn.ln@gmail.com",
+          "firstName": "ExampleFN",
+          "lastName": "ExampleLN",
+        }
+      }
+    />
+    <DeleteButton
+      deleteContact={[Function]}
+    />
+  </div>
+</div>
+`;
