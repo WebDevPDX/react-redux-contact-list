@@ -8,13 +8,13 @@ class addContactForm extends Component {
     super(props)
     const isEdit = props.match.path === '/user/edit/:id'
     this.state = {
-      _id: isEdit ? props.contact._id : '',
-      firstName: isEdit ? props.contact.firstName : '',
-      lastName: isEdit ? props.contact.lastName: '',
-      email: isEdit ? props.contact.email: '',
-      country: isEdit ? props.contact.country: '',
+      _id: isEdit && props.contact ? props.contact._id : '',
+      firstName: isEdit && props.contact ? props.contact.firstName : '',
+      lastName: isEdit && props.contact ? props.contact.lastName: '',
+      email: isEdit && props.contact ? props.contact.email: '',
+      country: isEdit && props.contact ? props.contact.country: '',
       isEdit: isEdit,
-      redirect: false,
+      redirect: isEdit && !props.contact,
     }
 
     this.handleChange = this.handleChange.bind(this)
