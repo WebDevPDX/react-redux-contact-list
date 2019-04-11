@@ -2,6 +2,10 @@
   "name": "contactbook",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.3"
+  },
   "devDependencies": {
     "prettier": "^1.16.4",
     "react-scripts": "2.1.8",
