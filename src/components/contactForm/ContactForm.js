@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import countryList from 'country-list'
 import validator from 'email-validator'
 
@@ -14,7 +14,7 @@ class addContactForm extends Component {
       email: isEdit && props.contact ? props.contact.email: '',
       country: isEdit && props.contact ? props.contact.country: '',
       isEdit: isEdit,
-      redirect: isEdit && !props.contact,
+      redirect: false,
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -58,6 +58,13 @@ class addContactForm extends Component {
     const isDisabled = Object.keys(errors).some(x => errors[x])
     if (this.state.redirect === true) {
       return <Redirect to='/' />
+    }
+    if(this.state.isEdit && !this.state._id) {
+      return (
+        <div className='column'>
+        <Link className='button is-danger is-fullwidth is-large' to='/'>There is no contact with this ID! Back to Contact List</Link>
+      </div>
+      )
     }
     return (
       <div className='column'>
