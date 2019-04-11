@@ -21,6 +21,6 @@ For persisting data I decided to use the localStorage API.
 
 In a second stage I decided to add [Bulma](https://bulma.io/) as a CSS framework to ensure a unified look of the application.
 
-Finally I deployed the [application](https://react-redux-contact-list-gig.herokuapp.com/) to Heroku where it can be admired in all of its glory... ;) 
+Finally I deployed the [application](https://react-redux-contact-list-gig.herokuapp.com/) to Heroku where it can be admired in all of its glory... ;)  
 For this deployment it was necesary to move the react-scripts package from dev dependencies to dependencies as Heroku is not installing dev-dependencies and I wanted to get it deployed the fastest way possible.
 
