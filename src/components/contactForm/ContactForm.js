@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import countryList from 'country-list'
 import validator from 'email-validator'
-import './contactForm.css'
 
 class addContactForm extends Component {
   constructor(props) {
@@ -61,45 +60,65 @@ class addContactForm extends Component {
       return <Redirect to='/' />
     }
     return (
-      <form onSubmit={this.handleSubmit} >
-        <label className={errors.firstName ? "error" : ""}>
-          First Name:
+      <div className='column'>
+        <form onSubmit={this.handleSubmit}>
+          <div className='field'>
+            <label className='label'>First Name:</label>
+            <div className='control'>
+              <input
+                className={`input ${errors.firstName ? 'is-danger' : 'is-success'}`}
+                type="text" 
+                name='firstName'
+                placeholder='First Name' 
+                value={this.state.firstName} 
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div className='field'>
+            <label className='label'>Last Name:</label>
+            <div className='control'>
+              <input
+                className={`input ${errors.lastName ? 'is-danger' : 'is-success'}`}
+                type="text" 
+                name='lastName'
+                placeholder='Last Name'  
+                value={this.state.lastName} 
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div className='field'>
+            <label className='label'>Email:</label>
+            <div className='control'>
+              <input
+                className={`input ${errors.email ? 'is-danger' : 'is-success'}`}
+                type="email" 
+                name='email' 
+                placeholder='Email' 
+                value={this.state.email} 
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div className='field'>
+            <label className='label'>Country:</label>
+            <div className='control'>
+              <div className='select is-fullwidth'>
+                <select onChange={this.onDropdownSelected} value={this.state.country} className='is-capitalized'>
+                  {this.createSelectItems()}
+                </select>
+              </div>
+            </div>
+          </div>
           <input 
-            type="text" 
-            name='firstName' 
-            value={this.state.firstName} 
-            onChange={this.handleChange}
+            className={`button is-outlined is-fullwidth ${isDisabled ? 'is-danger' : 'is-success'}`} 
+            disabled={isDisabled} 
+            type="submit" 
+            value="Submit" 
           />
-        </label>
-        <label className={errors.lastName ? "error" : ""}>
-          Last Name:
-          <input 
-            type="text" name='lastName' 
-            value={this.state.lastName} 
-            onChange={this.handleChange} 
-          />
-        </label>
-        <label className={errors.email ? "error" : ""}>
-          Email:
-          <input
-            type="email" name='email' 
-            value={this.state.email} 
-            onChange={this.handleChange}
-          />
-        </label>
-        <label>
-          Country:
-          <select onChange={this.onDropdownSelected} value={this.state.country}>
-            {this.createSelectItems()}
-          </select>
-        </label>
-        <input 
-          className='submit-button' 
-          disabled={isDisabled} 
-          type="submit" 
-          value="Submit" 
-        />
-      </form>
+        </form>
+      </div>
     )
   }
 }
