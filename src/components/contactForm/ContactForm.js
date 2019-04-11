@@ -93,7 +93,7 @@ class addContactForm extends Component {
             <div className='control'>
               <input
                 className={`input ${errors.email ? 'is-danger' : 'is-success'}`}
-                type="email" 
+                type="text" 
                 name='email' 
                 placeholder='Email' 
                 value={this.state.email} 
