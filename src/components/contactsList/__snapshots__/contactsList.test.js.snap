@@ -2,36 +2,72 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="contacts-list"
+  className=""
 >
-  <AddButton />
   <div
-    className="contact-line"
+    className="column"
+  >
+    <AddButton />
+  </div>
+  <div
+    className="column"
   >
     <div
-      className="contact-line_last-name"
+      className="box"
     >
-      ExampleLN
+      <div
+        className="columns"
+      >
+        <div
+          className="column"
+        >
+          <div
+            className="columns is-mobile"
+          >
+            <div
+              className="column"
+            >
+              ExampleLN
+            </div>
+            <div
+              className="column"
+            >
+              ExampleFN
+            </div>
+          </div>
+        </div>
+        <div
+          className="column"
+        >
+          <div
+            className="columns is-mobile"
+          >
+            <div
+              className="column"
+            >
+              <DetailsButton
+                contact={
+                  Object {
+                    "_id": "testID123",
+                    "country": "US",
+                    "email": "fn.ln@gmail.com",
+                    "firstName": "ExampleFN",
+                    "lastName": "ExampleLN",
+                  }
+                }
+              />
+            </div>
+            <div
+              className="column"
+            >
+              <DeleteButton
+                deleteContact={[Function]}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div
-      className="contact-line_first-name"
-    >
-      ExampleFN
-    </div>
-    <DetailsButton
-      contact={
-        Object {
-          "_id": "testID123",
-          "country": "US",
-          "email": "fn.ln@gmail.com",
-          "firstName": "ExampleFN",
-          "lastName": "ExampleLN",
-        }
-      }
-    />
-    <DeleteButton
-      deleteContact={[Function]}
-    />
   </div>
 </div>
 `;

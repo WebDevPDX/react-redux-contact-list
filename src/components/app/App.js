@@ -3,12 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import AllContactsContainer from '../../containers/allContacts/AllContactsContainer'
 import DetailedContactContainer from '../../containers/detailedContact/DetailedContactContainer'
 import ContactFormContainer from '../../containers/contactFormContainer/ContactFormContainer'
-import './App.css'
 
 class App extends Component {
   render() {
     return (
-      <div className="app-wrapper">
+      <div>
         <Router>
           <Switch>
             <Route path="/" exact component={AllContactsContainer} />
